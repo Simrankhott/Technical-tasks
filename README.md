@@ -1,6 +1,6 @@
 # Technical-tasks
 
-# System Resource Monitoring Script
+# Task 1: System Resource Monitoring Script
 
 ## Overview
 
@@ -55,6 +55,80 @@ If you encounter any issues, ensure that:
 
 - You have the necessary permissions to run the script.
 - The required commands (`ps`, `ss`, `df`, `uptime`, `free`, `systemctl`) are available on your system.
+
+
+Here's a README file for your `security_audit_hardening.sh` script:
+
+---
+
+# TASK 2: Security Audit and Hardening Script
+
+## Overview
+
+This script is designed to perform a comprehensive security audit and hardening check on a Linux server. It covers various aspects including system resource usage, network configuration, security updates, and server hardening practices. The script provides detailed information and allows you to run specific checks based on command-line arguments.
+
+## Features
+
+- **CPU Usage**: Displays top CPU-consuming applications and overall CPU usage.
+- **Memory Usage**: Shows memory usage statistics.
+- **Disk Usage**: Provides information on disk space utilization.
+- **Network Statistics**: Displays network traffic and connection stats.
+- **System Load**: Shows system load averages.
+- **Top Processes**: Lists top processes by CPU and memory usage.
+- **Active Services**: Lists all running services.
+- **User and Group Audit**: Shows current users and groups.
+- **File and Directory Permissions**: Audits file permissions, including world-writable and SUID/SGID files.
+- **Service Audit**: Lists running services and open ports.
+- **Firewall Status**: Displays the status of the Uncomplicated Firewall (UFW).
+- **IP and Network Configuration**: Shows IP addresses, network interfaces, and IP forwarding settings.
+- **Security Updates**: Lists available security updates.
+- **Log Monitoring**: Provides recent SSH logins and kernel messages.
+- **Server Hardening**: Checks SSH configuration and IPv6 settings.
+
+## Usage
+
+To use the script, run it with one or more of the following command-line arguments:
+
+```bash
+./security_audit_hardening.sh [OPTIONS]
+```
+
+### Options
+
+- `--cpu`: Display top CPU-consuming applications and CPU usage.
+- `--memory`: Display memory usage.
+- `--disk`: Display disk usage.
+- `--network`: Display network statistics.
+- `--load`: Display system load.
+- `--process`: Display top processes by CPU and memory.
+- `--service`: Display active services.
+- `--user`: Audit users and groups.
+- `--file`: Audit file and directory permissions.
+- `--service-audit`: Audit running services and open ports.
+- `--firewall`: Display firewall status.
+- `--ip`: Display IP and network configuration.
+- `--updates`: List available security updates.
+- `--log`: Display recent log entries.
+- `--hardening`: Display server hardening settings.
+- `--all`: Run all checks.
+
+### Example
+
+To run all checks:
+
+```bash
+./security_audit_hardening.sh --all
+```
+
+## Requirements
+
+- `ps`, `ss`, `ifstat`, `top`, `free`, `df`, `netstat`, `grep`, `awk`, `sysctl`, `cut`, `find`, `dmesg`, `systemctl`, `apt`, and `ufw` must be installed and available in the system PATH.
+- The script requires `sudo` privileges for updating package lists and some system commands.
+
+## Notes
+
+- The `apt` command may produce warnings about CLI stability. These can generally be ignored unless specific issues are encountered.
+- The script outputs may vary depending on the system configuration and installed packages.
 
 ## License
 
